@@ -1,0 +1,20 @@
+user:
+  name:
+    max_length: 50
+  email:
+    max_length: 127
+  password:
+    min_length: 6
+post:
+  content:
+    max_length: 140
+  title:
+    max_length: 50
+comment:
+  content:
+    max_length: 140
+tag:
+  name:
+    max_length: 20
+picture:
+  file_type: "image/jpeg, image/gif, image/png"
