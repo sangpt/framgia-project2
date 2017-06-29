@@ -6,7 +6,10 @@ git_source(:github) do |repo_name|
 end
 
 gem "coffee-rails", "~> 4.2"
+gem "config"
+gem "devise"
 gem "jbuilder", "~> 2.5"
+gem "faker"
 gem "mysql2", ">= 0.3.18", "< 0.5"
 gem "puma", "~> 3.7"
 gem "rails", "~> 5.1.1"
