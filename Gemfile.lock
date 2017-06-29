@@ -56,6 +56,9 @@ GEM
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
     bindex (0.5.0)
+    bootstrap-sass (3.3.6)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     brakeman (3.6.2)
     builder (3.2.3)
     bundler-audit (0.5.0)
@@ -196,6 +199,10 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 5.1.2)
       sprockets-rails (>= 2.0.0)
+    rails-controller-testing (1.0.2)
+      actionpack (~> 5.x, >= 5.0.1)
+      actionview (~> 5.x, >= 5.0.1)
+      activesupport (~> 5.x)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -241,6 +248,9 @@ GEM
     rspec-expectations (3.6.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.6.0)
+    rspec-html-matchers (0.9.1)
+      nokogiri (~> 1)
+      rspec (>= 3.0.0.a, < 4)
     rspec-mocks (3.6.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.6.0)
@@ -344,6 +354,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   better_errors
+  bootstrap-sass
   brakeman
   bundler-audit
   byebug
@@ -363,10 +374,12 @@ DEPENDENCIES
   puma (~> 3.7)
   railroady
   rails (~> 5.1.1)
+  rails-controller-testing
   rails_best_practices
   reek
   rspec
   rspec-collection_matchers
+  rspec-html-matchers
   rspec-rails
   rubocop (~> 0.35.0)
   rubocop-checkstyle_formatter

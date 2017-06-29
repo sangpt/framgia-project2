@@ -1,0 +1,89 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+// mixins, variables, etc
+
+$blue-dark: #486094;
+$blue-light: #3b5998;
+$gray-light: #e9ebee;
+$gray-medium: #eaeaea;
+$white: #fff;
+
+@mixin background-color($value, $content:null) {
+  background-color: $value $content;
+}
+
+// universal
+
+body {
+  background-color: $gray-light;
+  padding-top: 60px;
+}
+
+header {
+  background-color: $blue-light;
+
+  a {
+    color: $white;
+    font-weight: bold;
+
+    &:hover {
+      @include background-color($blue-dark, !important);
+      color: $white;
+    }
+  }
+}
+
+.center {
+  text-align: center;
+
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+// header
+
+.logo {
+  color: $white;
+  float: left;
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0 10px 8px 0;
+  padding-top: 4px;
+
+  &:hover {
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+// footer
+
+footer {
+  color: $gray-light;
+  margin-top: 45px;
+  padding-top: 5px;
+
+  a {
+    color: $gray;
+
+    &:hover {
+      color: $gray-darker;
+    }
+  }
+
+  ul {
+    float: right;
+    list-style: none;
+
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+
+  strong {
+    color: $gray;
+  }
+}
