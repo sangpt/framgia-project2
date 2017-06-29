@@ -1,0 +1,18 @@
+en:
+  app_name: "Project 2"
+  static_pages:
+    home:
+      title: "Home"
+    help:
+      title: "Help"
+    contact:
+      title: "Contact"
+    about:
+      title: "About"
+  layout:
+    header:
+      users: "Users"
+      help: "Help"
+      log_in: "Log in"
+    footer:
+      all_right: "All rights reserved"

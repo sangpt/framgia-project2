@@ -1,0 +1,13 @@
+// variables
+
+$blue-dark: #486094;
+$blue-light: #3b5998;
+$gray-light: #e9ebee;
+$gray-medium: #eaeaea;
+$white: #fff;
+
+// mixins
+
+@mixin background-color($value, $content:null) {
+  background-color: $value $content;
+}
