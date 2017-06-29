@@ -16,6 +16,7 @@ gem "rails", "~> 5.1.1"
 gem "sass-rails", "~> 5.0"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
+gem "bootstrap-sass"
 
 group :development, :test do
   gem "autoprefixer-rails"
@@ -30,10 +31,12 @@ group :development, :test do
   gem "guard-rspec", require: false
   gem "jshint"
   gem "railroady"
+  gem "rails-controller-testing"
   gem "rails_best_practices"
   gem "reek"
   gem "rspec"
   gem "rspec-collection_matchers"
+  gem "rspec-html-matchers"
   gem "rspec-rails"
   gem "rubocop", "~> 0.35.0", require: false
   gem "rubocop-checkstyle_formatter", require: false
