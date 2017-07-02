@@ -1,2 +1,15 @@
-<% provide :title, t(".title") %>
-<h1><%= t ".title" %></h1>
+<div class="row">
+  <div class="col-md-6">
+    <div class="intro">
+      Fakebook helps you connect and share with the people in your life.
+    </div>
+    <%= image_tag "social.png", alt: "social network", class: "img-responsive" %>
+  </div>
+  <div class="col-md-6 center">
+    <h1>Create an account</h1>
+    <h3 class="center">
+      It's free and always will be.
+    </h3>
+    <%= render template: "devise/registrations/new" %>
+  </div>
+</div>

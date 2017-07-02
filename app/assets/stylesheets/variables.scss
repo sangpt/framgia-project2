@@ -4,10 +4,23 @@ $blue-dark: #486094;
 $blue-light: #3b5998;
 $gray-light: #e9ebee;
 $gray-medium: #eaeaea;
+$blue-intro: #0e385f;
+$gray-border-form: #bdc7d8;
+$alert-bg-color: #dff0d8;
+$alert-border-color: #d6e9c6;
+$alert-color: #468847;
 $white: #fff;
 
 // mixins
 
 @mixin background-color($value, $content:null) {
   background-color: $value $content;
+}
+
+@mixin box-sizing {
+  box-sizing: border-box;
+}
+
+@mixin margin-left($value, $content:null) {
+  margin-left: $value $content;
 }
