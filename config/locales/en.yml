@@ -3,6 +3,10 @@ en:
   static_pages:
     home:
       title: "Home"
+      intro: "Fakebook helps you connect and share with the people in your life"
+      create_an_account: "Create an account"
+      free: "It's free and always will be"
+      social_network: "social network"
     help:
       title: "Help"
     contact:
@@ -16,3 +20,27 @@ en:
       log_in: "Log in"
     footer:
       all_right: "All rights reserved"
+  devise:
+    registrations:
+      edit:
+        leave_blank: "(leave blank if you don't want to change it)"
+        we_need: "(we need your current password to confirm your changes)"
+        title: "Edit"
+        unhappy: "Unhappy"
+        cancel_my_account: "Cancel my account"
+        update: "Update"
+        you_sure: "Are you sure?"
+      new:
+        your_name: "Your name"
+        your_email: "Your email"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+        sign_up: "Sign up"
+        or: "Or"
+    sessions:
+      new:
+        title: "Sign in"
+        or: "Or"
+    shared:
+      socials:
+        sign_in_with: "Sign in with"
