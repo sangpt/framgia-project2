@@ -1,0 +1,21 @@
+<div class="container-fluid">
+<%= form_for resource, url: registration_path(resource) do |f| %>
+  <%= devise_error_messages! %>
+
+  <%= f.text_field :name, placeholder: t(".your_name"), class: "sign-up-form", required: true %>
+
+  <%= f.email_field :email, placeholder: t(".your_email"), class: "sign-up-form", required: true %>
+
+  <%= f.password_field :password, autocomplete: "off", class: "sign-up-form",
+    placeholder: t(".password"), required: true, id: "password" %>
+
+  <%= f.password_field :password_confirmation, autocomplete: "off",
+    class: "sign-up-form", placeholder: t(".password_confirmation"),
+    required: true, id: "password_confirmation" %>
+
+  <%= f.submit t(".sign_up"), class: "btn btn-primary" %>
+<% end %>
+
+<h4><%= t ".or" %></h4>
+<%= render "devise/shared/socials" %>
+</div>
