@@ -13,11 +13,13 @@ en:
       title: "Contact"
     about:
       title: "About"
-  layout:
+  layouts:
     header:
       users: "Users"
       help: "Help"
       log_in: "Log in"
+      search: "Search"
+      search_placeholder: "Search anything..."
     footer:
       all_right: "All rights reserved"
   devise:
@@ -45,3 +47,6 @@ en:
     shared:
       socials:
         sign_in_with: "Sign in with"
+  shared:
+    comment_form:
+      placeholder: "Type comment here..."

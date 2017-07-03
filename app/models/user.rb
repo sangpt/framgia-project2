@@ -11,4 +11,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable,
     :omniauthable, omniauth_providers: [:facebook, :google]
+
+  def is_user? user
+    self == user
+  end
 end

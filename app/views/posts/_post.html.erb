@@ -1,0 +1,45 @@
+<li class="post" id="post-<%= post.id %>">
+  <%= link_to gravatar_for(post.user, Settings.user.gravatar.size_50), post.user %>
+  <span class="user"><%= link_to post.user.name, post.user %></span>
+  <span class="title">
+    <%= post.title %>
+  </span>
+  <div class="content">
+    <%= post.content %>
+    <%= image_tag post.picture.url if post.picture? %>
+  </div>
+  <span class="timestamp">
+    <%= t ".posted" %> <%= time_ago_in_words post.created_at %>
+    <%= t ".ago" %>.
+  </span>
+  <% if user_signed_in? %>
+    <% if post.user.is_user? current_user or current_user.is_admin? %>
+    <div class="dropdown delete">
+      <button class="btn dropdown-toggle btn-dropdown" type="button" data-toggle="dropdown">
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu dropdown-menu-right">
+          <li>
+            <%= link_to t(".edit"), edit_post_path(post.id) %>
+          </li>
+          <li>
+            <%= link_to t(".delete"), post, method: :delete,
+              data: {confirm: t(".you_sure")} %>
+          </li>
+        </ul>
+      </div>
+      <% end %>
+    <% end %>
+
+    <div id="post-comment-<%= post.id.to_s %>">
+      <% if post.comments.any? %>
+        <% @comments = post.comments %>
+        <%= render @comments %>
+      <% end %>
+    </div>
+
+    <% if user_signed_in? %>
+      <% @comment = current_user.comments.build user_id: current_user.id, post_id: post.id %>
+      <%= render "shared/comment_form" %>
+    <% end %>
+
+  </li>
