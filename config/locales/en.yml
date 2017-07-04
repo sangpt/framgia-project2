@@ -40,3 +40,6 @@ en:
     shared:
       socials:
         sign_in_with: "Sign in with"
+  shared:
+    comment_form:
+      placeholder: "Type comment here..."

@@ -1,0 +1,10 @@
+<%= form_for @comment, remote: true do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <span class="field frm-comment">
+    <%= gravatar_for current_user, 32 %>
+    <%= f.text_field :content, placeholder: t(".placeholder"),
+      class: "txt-comment", id: "txt-comment-" << @comment.post_id.to_s %>
+  </span>
+  <%= f.hidden_field :post_id %>
+  <%= f.submit t(".comment"), class: "btn btn-primary hidden" %>
+<% end %>
