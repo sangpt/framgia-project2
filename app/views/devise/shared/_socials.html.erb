@@ -1,0 +1,11 @@
+<div class="row">
+  <%- resource_class.omniauth_providers.each do |provider| %>
+    <div class="col-md-6">
+      <%= link_to omniauth_authorize_path(resource_name, provider),
+        class: "btn btn-block btn-social btn-#{provider.to_s}" do %>
+        <%= t ".sign_in_with" %> <%= OmniAuth::Utils.camelize provider %>
+        <i class="fa fa-<%= provider.to_s %>"></i>
+      <% end %>
+    </div>
+  <% end %>
+</div>

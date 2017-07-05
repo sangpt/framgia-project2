@@ -30,6 +30,7 @@ en:
         cancel_my_account: "Cancel my account"
         update: "Update"
         you_sure: "Are you sure?"
+        waiting: "Currently waiting confirmation for"
       new:
         your_name: "Your name"
         your_email: "Your email"
