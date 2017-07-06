@@ -6,13 +6,17 @@ git_source(:github) do |repo_name|
 end
 
 gem "bootstrap-sass"
+gem "bootstrap-will_paginate"
+gem "carrierwave", "1.1.0"
 gem "coffee-rails", "~> 4.2"
 gem "config"
 gem "devise"
 gem "faker"
+gem "fog"
 gem "font-awesome-rails"
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails"
+gem "mini_magick", "4.7.0"
 gem "mysql2", ">= 0.3.18", "< 0.5"
 gem "omniauth-facebook"
 gem "omniauth-google"

@@ -10,7 +10,7 @@ User.create! name: "Example User", email: "example@railstutorial.org",
 end
 
 users = User.order(:created_at).take 6
-10.times do
+20.times do
   title = Faker::Company.name
   content = Faker::Lorem.sentence 5
   users.each{|user| user.posts.create! title: title, content: content}

@@ -1,0 +1,15 @@
+<%= form_for @post, html: { multipart: true } do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="field">
+    <%= f.text_field :title, placeholder: t(".placeholder_title"),
+      class: "txt-post", required: true %>
+  </div>
+  <div class="field">
+    <%= f.text_area :content, placeholder: t(".placeholder_content"),
+      class: "txt-post", required: true %>
+  </div>
+  <%= f.submit t(".post"), class: "btn btn-primary", id: "create-post" %>
+  <span class="picture">
+    <%= f.file_field :picture, accept: Settings.picture.file_type %>
+  </span>
+<% end %>

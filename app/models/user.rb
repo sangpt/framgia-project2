@@ -15,4 +15,8 @@ class User < ApplicationRecord
   def is_user? current_user
     self == current_user
   end
+
+  def feed
+    Post.load_feed id
+  end
 end

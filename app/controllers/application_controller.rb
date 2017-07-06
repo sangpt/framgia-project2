@@ -6,9 +6,8 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in_user
-    return if logged_in?
-    store_location
+    return if user_signed_in?
     flash[:danger] = t ".please_log_in"
-    redirect_to login_url
+    redirect_to sign_in_url
   end
 end

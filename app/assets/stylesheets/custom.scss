@@ -113,6 +113,9 @@ textarea {
   border: 1px solid $gray;
   margin-bottom: 15px;
   width: 100%;
+  overflow: hidden;
+  padding: 0;
+  outline: none;
 }
 
 .box {
@@ -206,6 +209,9 @@ textarea {
     position: absolute;
     top: 5px;
     right: 5px;
+  }
+  .delete-post {
+    cursor: pointer;
   }
   .comment {
     display: block;
