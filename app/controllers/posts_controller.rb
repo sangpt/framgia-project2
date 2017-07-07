@@ -17,7 +17,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = post.find_by id: params[:id]
+    @post = Post.find_by id: params[:id]
   end
 
   def edit
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
       }
     else
       render json: {
-        status: :error,
+        status: :error
       }
     end
   end

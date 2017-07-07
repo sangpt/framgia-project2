@@ -1,0 +1,25 @@
+<% provide :title, t(".title") %>
+<h1><%= t ".title" %></h1>
+
+<%= will_paginate %>
+
+<div class="row">
+  <div class="col-md-4">
+    <ul class="users">
+      <% users_arr = @users.to_a %>
+      <%= render users_arr.shift 10 %>
+    </ul>
+  </div>
+  <div class="col-md-4">
+    <ul class="users">
+      <%= render users_arr.shift 10 %>
+    </ul>
+  </div>
+  <div class="col-md-4">
+    <ul class="users">
+      <%= render users_arr.shift 10 %>
+    </ul>
+  </div>
+</div>
+
+<%= will_paginate %>

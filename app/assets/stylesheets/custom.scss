@@ -188,7 +188,7 @@ textarea {
   }
   .content {
     display: block;
-    margin-left: 60px;
+    margin-left: 20px;
     word-wrap: break-word;
     padding-right: 20px;
     img {
@@ -198,9 +198,36 @@ textarea {
   }
   .timestamp {
     color: #7F7783;
+    font-size: 0.9em;
     display: block;
     margin: 0 0 5px 60px;
   }
+
+  .info {
+    color: #7F7783;
+    margin: 0 0 5px 20px;
+    hr {
+      width: 95%;
+    }
+  }
+
+  .post-action {
+    color: #7F7783;
+    margin: 5px 20px 5px 20px;
+    border-top: 1px solid #DDDFE2;
+    padding-top: 5px;
+  }
+
+  .like,
+  .show-comment {
+    cursor: pointer;
+    margin-right: 20px;
+  }
+
+  .comment-area {
+    display: none;
+  }
+
   .gravatar {
     float: left;
     margin: 5px 10px 0 0;
@@ -213,9 +240,11 @@ textarea {
   .delete-post {
     cursor: pointer;
   }
+
   .comment {
     display: block;
-    margin-left: 30px;
+    margin-left: 22px;
+    margin-right: 25px;
     border-top: 1px solid $gray-lighter;
     position: relative;
     padding: 5px 0 5px;
@@ -361,4 +390,16 @@ aside {
 
 .users.follow {
   padding: 0;
+}
+
+// users index
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    border-bottom: 1px solid $gray-lighter;
+    overflow: auto;
+    padding: 10px 0;
+  }
 }

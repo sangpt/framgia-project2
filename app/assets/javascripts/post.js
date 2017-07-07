@@ -64,6 +64,11 @@ $(document).on('turbolinks:load', function(){
       });
       return false;
     });
+
+    $('.show-comment').click(function() {
+      $(this).parents('li.post').find('.comment-area').toggle();
+    });
+
   })
 });
 

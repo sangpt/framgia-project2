@@ -7,9 +7,9 @@ user:
     min_length: 6
 post:
   content:
-    max_length: 140
+    max_length: 2000
   title:
-    max_length: 50
+    max_length: 140
 comment:
   content:
     max_length: 140

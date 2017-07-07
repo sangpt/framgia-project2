@@ -1,0 +1,10 @@
+<li id="user-<%= user.id %>">
+  <%= gravatar_for user, 50 %>
+  <%= link_to user.name, user %>
+  <% if user_signed_in? %>
+    <% if current_user.is_admin? && !user.is_user?(current_user) %>
+      | <%= link_to t(".delete"), user, method: :delete,
+        data: {confirm: t(".you_sure")}, remote: true %>
+    <% end %>
+  <% end %>
+</li>
