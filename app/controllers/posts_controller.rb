@@ -6,7 +6,10 @@ class PostsController < ApplicationController
     @post = current_user.posts.build post_params
 
     if @post.save
-      render json: {status: :success, html: render_to_string(partial: "posts/post", locals: {post: @post}, layout: false)}
+      render json: {
+        status: :success,
+        html: render_to_string(partial: "posts/post", locals: {post: @post}, layout: false)
+      }
     else
       @feed_items = []
       render "static_pages/home"
@@ -18,22 +21,30 @@ class PostsController < ApplicationController
   end
 
   def edit
-    render json: {status: :success, html: render_to_string(partial: "posts/edit_form", locals: {post: @post}, layout: false)}
+    render json: {
+      status: :success,
+      html: render_to_string(partial: "posts/edit_form", locals: {post: @post}, layout: false)
+    }
   end
 
   def update
     if @post.update_attributes post_params
-      render json: {status: :success, html: render_to_string(partial: "posts/post", locals: {post: @post}, layout: false)}
+      render json: {
+        status: :success,
+        html: render_to_string(partial: "posts/post", locals: {post: @post}, layout: false)
+      }
     else
-
+      render json: {
+        status: :error,
+      }
     end
   end
 
   def destroy
     if @post.destroy
-      render json: {status: :success, message: "thanh cong"}
+      render json: {status: :success}
     else
-      render json: {status: :error, message: "ko thanh cong"}
+      render json: {status: :error}
     end
   end
 

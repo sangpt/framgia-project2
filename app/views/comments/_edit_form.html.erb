@@ -1,4 +1,4 @@
-<%= form_for @comment, html: {class: "create-comment"} do |f| %>
+<%= form_for @comment, html: {class: "update-comment"}, data: {id: @comment.id} do |f| %>
   <%= render "shared/error_messages", object: f.object %>
   <span class="field frm-comment">
     <%= gravatar_for current_user, 32 %>

@@ -13,11 +13,10 @@
       <span class="caret"></span></button>
       <ul class="dropdown-menu dropdown-menu-right">
         <li>
-          <%= link_to "Edit", edit_comment_path(comment.id), remote: true %>
+          <a class="edit-comment" data-id="<%= comment.id %>">edit</a>
         </li>
         <li>
-          <%= link_to "Delete", comment, method: :delete,
-          data: {confirm: t(".you_sure")}, remote: true %>
+          <a class="delete-comment" data-id="<%= comment.id %>">delete</a>
         </li>
       </ul>
     </div>
