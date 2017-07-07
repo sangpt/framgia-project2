@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
   has_many :active_relationships, class_name: Relationship.name,
     foreign_key: :follower_id, dependent: :destroy
   has_many :passive_relationships, class_name: Relationship.name,
@@ -26,6 +27,10 @@ class User < ApplicationRecord
 
   def following? other_user
     following.include? other_user
+  end
+
+  def liked? post
+    !likes.find_by(post_id: post.id).nil?
   end
 
   def feed

@@ -7,7 +7,9 @@ class CommentsController < ApplicationController
     if @comment.save
       render json: {
         status: :success,
-        html: render_to_string(partial: "comments/comment", locals: {comment: @comment}, layout: false)
+        html: render_to_string(partial: "comments/comment", locals: {comment: @comment}, layout: false),
+        comment_number: @comment.post.comments.size.to_s <<
+          " comment".pluralize(@comment.post.comments.size)
       }
     else
       @feed_items = []
@@ -42,7 +44,11 @@ class CommentsController < ApplicationController
 
   def destroy
     if @comment.destroy
-      render json: {status: :success}
+      render json: {
+        status: :success,
+        comment_number: @comment.post.comments.size.to_s <<
+          " comment".pluralize(@comment.post.comments.size)
+      }
     else
       render json: {status: :error}
     end

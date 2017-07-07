@@ -69,6 +69,33 @@ $(document).on('turbolinks:load', function(){
       $(this).parents('li.post').find('.comment-area').toggle();
     });
 
+    $('body').on('click', '.like', function(){
+      var post_id = $(this).data('id');
+      $.ajax({
+        type: 'POST',
+        dateType: 'json',
+        data: {id: post_id},
+        url: '/likes',
+        success: function(data) {
+          $('#like-' + post_id).attr('class', 'delete-like');
+          $('#like-number-' + post_id).text(data.like_number);
+        }
+      });
+    });
+
+    $('body').on('click', '.delete-like', function(){
+      var post_id = $(this).data('id');
+      $.ajax({
+        type: 'DELETE',
+        dateType: 'json',
+        // data: {post_id: post_id},
+        url: '/likes/' + post_id,
+        success: function(data) {
+          $('#like-' + post_id).attr('class', 'like');
+          $('#like-number-' + post_id).text(data.like_number);
+        }
+      });
+    });
   })
 });
 

@@ -24,3 +24,8 @@ posts = user.posts.order(created_at: :desc).take 3
     user.comments.create! content: content, post: post
   end
 end
+
+posts = Post.all
+posts.each do |post|
+  user.likes.build(post_id: post.id).save
+end

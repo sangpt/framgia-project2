@@ -205,15 +205,14 @@ textarea {
 
   .info {
     color: #7F7783;
-    margin: 0 0 5px 20px;
+    margin: 0 0 0 20px;
     hr {
       width: 95%;
     }
   }
 
   .post-action {
-    color: #7F7783;
-    margin: 5px 20px 5px 20px;
+    margin: 5px 20px;
     border-top: 1px solid #DDDFE2;
     padding-top: 5px;
   }
@@ -222,6 +221,15 @@ textarea {
   .show-comment {
     cursor: pointer;
     margin-right: 20px;
+  }
+
+  .delete-like {
+    @extend .like;
+    color: #4673CC;
+  }
+
+  .like-number {
+    @extend .like;
   }
 
   .comment-area {

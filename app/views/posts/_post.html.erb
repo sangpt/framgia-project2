@@ -13,13 +13,9 @@
     <%= post.content %>
     <%= image_tag post.picture.url if post.picture? %>
   </div>
-  <span class="info">
-    10 people like. 20 comments.
-  </span>
-  <div class="post-action">
-    <span class="like"><span class="glyphicon glyphicon-thumbs-up"></span> Like</span>
-    <span class="show-comment">Comment</span>
-  </div>
+
+  <%= render "posts/post_action", post: post %>
+
   <% if user_signed_in? %>
   <% if post.user.is_user? current_user or current_user.is_admin? %>
   <div class="dropdown delete">
