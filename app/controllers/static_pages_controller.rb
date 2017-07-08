@@ -8,4 +8,12 @@ class StaticPagesController < ApplicationController
       @user = current_user
     end
   end
+
+  def search
+    q = params[:search]
+    @users = User.where "name like '%#{q}%'"
+    @posts = Post.where "content like '%#{q}%' or title like '%#{q}%'"
+    @comments = Comment.where("content like '%#{q}%'")
+    @tags = Tag.where "name like '%#{q}%'"
+  end
 end

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get "/help", to: "static_pages#help"
   get "/about", to: "static_pages#about"
   get "/contact", to: "static_pages#contact"
-  post "/search", to: "static_pages#search"
+  get "/search", to: "static_pages#search"
   devise_for :users
   devise_scope :user do
     get "/sign_in", to: "devise/sessions#new"
