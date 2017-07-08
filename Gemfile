@@ -14,7 +14,6 @@ gem "devise"
 gem "faker"
 gem "fog"
 gem "font-awesome-rails"
-gem "pg"
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails"
 gem "mini_magick", "4.7.0"
@@ -66,6 +65,10 @@ group :test do
   gem "simplecov", require: false
   gem "simplecov-json"
   gem "simplecov-rcov", require: false
+end
+
+group :production do
+  gem "pg"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
