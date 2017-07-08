@@ -7,7 +7,9 @@
     <%= t ".ago" %>.<br>
 
     <% post.tags.each do |tag| %>
-      <span class="label label-primary"><%= tag.name %></span>
+      <%= link_to tag do %>
+        <span class="label label-primary"><%= tag.name %></span>
+      <% end %>
     <% end %>
   </span>
   <span class="title">

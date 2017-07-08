@@ -1,0 +1,12 @@
+<% provide :title, @tag.name %>
+<div class="row">
+  <div class="col-md-8">
+  <% if @posts.any? %>
+    <h3><%= t ".posts" %> (<%= @posts.size %>)</h3>
+    <ol class="posts" id="posts">
+      <%= render @posts %>
+    </ol>
+    <%= will_paginate @posts %>
+    <% end %>
+  </div>
+</div>

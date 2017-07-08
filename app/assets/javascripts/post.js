@@ -24,7 +24,6 @@ $(document).on('turbolinks:load', function(){
 
     $('#create-post').on('click', function(event) {
       event.preventDefault();
-      var post_id = $(this).attr('id');
       var post_title = $('#post_title').val();
       var post_content = $('#post_content').val();
       var post_picture = $('#post_picture').val();
