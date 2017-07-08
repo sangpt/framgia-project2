@@ -6,7 +6,7 @@ class Post < ApplicationRecord
   has_many :tags, through: :post_tags
 
   scope :post_sort, ->{order created_at: :desc}
-  scope :load_feed, -> id do
+  scope :load_feed, -> (id) do
     following_ids = "SELECT followed_id FROM relationships
       WHERE  follower_id = :user_id"
     Post.where("user_id IN (#{following_ids})

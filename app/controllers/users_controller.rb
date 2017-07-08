@@ -51,14 +51,14 @@ class UsersController < ApplicationController
   def following
     @title = t ".title"
     @users = @user.following.paginate page: params[:page],
-      per_page: Settings.following.per_page
+      per_page: 20
     render :show_follow
   end
 
   def followers
     @title = t ".title"
     @users = @user.followers.paginate page: params[:page],
-      per_page: Settings.follower.per_page
+      per_page: 20
     render :show_follow
   end
 

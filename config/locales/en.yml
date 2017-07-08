@@ -43,3 +43,7 @@ en:
   shared:
     comment_form:
       placeholder: "Type comment here..."
+    post_form:
+      placeholder_title: "Type title here..."
+      placeholder_content: "Type content here..."
+      post: "Post"

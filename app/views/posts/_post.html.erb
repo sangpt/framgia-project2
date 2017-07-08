@@ -4,7 +4,11 @@
   <span class="user"><%= link_to post.user.name, post.user %></span>
   <span class="timestamp">
     <%= t ".posted" %> <%= time_ago_in_words post.created_at %>
-    <%= t ".ago" %>.
+    <%= t ".ago" %>.<br>
+
+    <% post.tags.each do |tag| %>
+      <span class="label label-primary"><%= tag.name %></span>
+    <% end %>
   </span>
   <span class="title">
     <%= link_to post.title, post %>

@@ -1,12 +1,16 @@
 <%= form_for @post, html: { multipart: true } do |f| %>
   <%= render "shared/error_messages", object: f.object %>
-  <div class="field">
-    <%= f.text_field :title, placeholder: t(".placeholder_title"),
-      class: "txt-post", required: true %>
+
+  <div class="form-group">
+    <%= text_field_tag :tags, "", placeholder: "Input tags", id: "input-tags" %>
   </div>
-  <div class="field">
+  <div class="form-group">
+    <%= f.text_field :title, placeholder: t(".placeholder_title"),
+    class: "txt-post form-control", required: true %>
+  </div>
+  <div class="form-group">
     <%= f.text_area :content, placeholder: t(".placeholder_content"),
-      class: "txt-post", required: true %>
+    class: "txt-post form-control", required: true %>
   </div>
   <%= f.submit t(".post"), class: "btn btn-primary", id: "create-post" %>
   <span class="picture">

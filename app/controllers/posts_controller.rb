@@ -6,9 +6,21 @@ class PostsController < ApplicationController
     @post = current_user.posts.build post_params
 
     if @post.save
+      tags = params[:tags]
+      tags.split(",").each do |tag_name|
+        tag = Tag.find_by(name: tag_name)
+
+        if tag.nil?
+          @post.tags.create name: tag_name
+        else
+          @post.post_tags.create tag_id: tag.id
+        end
+      end
+
       render json: {
         status: :success,
-        html: render_to_string(partial: "posts/post", locals: {post: @post}, layout: false)
+        html: render_to_string(partial: "posts/post", locals: {post: @post}, layout: false),
+        placeholder: "Input tags here"
       }
     else
       @feed_items = []

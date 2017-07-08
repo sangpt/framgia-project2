@@ -1,30 +1,25 @@
 $(document).on('turbolinks:load', function(){
   $(document).ready(function(){
-    $('body').on('click','.delete-post', function() {
-      var post_id = $(this).attr('id');
-      console.log(post_id);
-      $.ajax({
-        type: 'DELETE',
-        dateType: 'json',
-        url: '/posts/'+ post_id,
-        data: {id: post_id},
-        success: function(data){
-          $('#post-' + post_id).hide();
+    $('#input-tags').selectize({
+      delimiter: ',',
+      plugins: ['remove_button'],
+      persist: false,
+      maxItems: 10,
+      create: function(input) {
+        return {
+          value: input,
+          text: input
         }
-      });
+      }
     });
 
-    $('body').on('click', '.edit-post', function() {
-      var post_id = $(this).attr('id');
-      $.ajax({
-        type: 'GET',
-        dateType: 'json',
-        url: '/posts/'+ post_id + '/edit/',
-        success: function(data){
-          $('body').prepend(data.html);
-          $('#myModal').modal();
-        }
-      });
+    function h(e) {
+      $(e).css({'height':'auto','overflow-y':'hidden'}).height(e.scrollHeight);
+    }
+    $('textarea').each(function () {
+      h(this);
+    }).on('input', function () {
+      h(this);
     });
 
     $('#create-post').on('click', function(event) {
@@ -42,9 +37,25 @@ $(document).on('turbolinks:load', function(){
         data: params,
         success: function(data){
           $(data.html).prependTo($('#posts'));
+          $('#new_post').trigger("reset");
+          $('.items').children('div').hide();
+          $('.items').children('input').attr('placeholder', data.placeholder);
         }
       });
       return false;
+    });
+
+    $('body').on('click', '.edit-post', function() {
+      var post_id = $(this).attr('id');
+      $.ajax({
+        type: 'GET',
+        dateType: 'json',
+        url: '/posts/'+ post_id + '/edit/',
+        success: function(data){
+          $('body').prepend(data.html);
+          $('#myModal').modal();
+        }
+      });
     });
 
     $('body').on('click', '#update-post', function(event) {
@@ -63,6 +74,20 @@ $(document).on('turbolinks:load', function(){
         }
       });
       return false;
+    });
+
+    $('body').on('click','.delete-post', function() {
+      var post_id = $(this).attr('id');
+      console.log(post_id);
+      $.ajax({
+        type: 'DELETE',
+        dateType: 'json',
+        url: '/posts/'+ post_id,
+        data: {id: post_id},
+        success: function(data){
+          $('#post-' + post_id).hide();
+        }
+      });
     });
 
     $('.show-comment').click(function() {
