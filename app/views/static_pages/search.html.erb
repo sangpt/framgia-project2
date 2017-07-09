@@ -19,15 +19,35 @@
       </ul>
     </div>
     <div class="tab-pane" id="2b">
-      <ol class="posts" id="posts">
-        <%= render @posts %>
-      </ol>
+      <div class="row">
+        <div class="col-md-8">
+          <ol class="posts" id="posts">
+            <%= render @posts %>
+          </ol>
+        </div>
+      </div>
     </div>
     <div class="tab-pane" id="3b">
-      <p>Not done</p>
+      <div class="row">
+        <div class="col-md-8">
+          <ol class="posts" id="posts">
+            <% @comments.each do |comment| %>
+              <%= render comment.post %>
+            <% end %>
+          </ol>
+        </div>
+      </div>
     </div>
     <div class="tab-pane" id="4a">
-      <p>Not done</p>
+      <div class="row">
+        <div class="col-md-8">
+          <ol class="posts" id="posts">
+            <% @tags.each do |tag| %>
+              <%= render tag.posts %>
+            <% end %>
+          </ol>
+        </div>
+      </div>
     </div>
 
   </div>

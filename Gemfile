@@ -38,6 +38,7 @@ group :development, :test do
   gem "factory_girl_rails"
   gem "guard-rspec", require: false
   gem "jshint"
+  gem "mysql2"
   gem "railroady"
   gem "rails-controller-testing"
   gem "rails_best_practices"
