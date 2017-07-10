@@ -2,8 +2,18 @@
   <div class="container">
     <nav>
       <%= link_to t("app_name"), root_path, class: "logo" %>
+      <% if user_signed_in? %>
+        <%= form_tag search_path, method: :post, class: "navbar-form navbar-left form-inline" do %>
+          <div class="form-group">
+            <%= text_field_tag :search, params[:search], placeholder: t(".search_placeholder"),
+              class: "search-form form-control input-sm" %>
+          </div>
+          <%= submit_tag t(".search"), class: "btn hidden" %>
+        <% end %>
+      <% end %>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
+          <li><%= link_to t(".profile"), current_user %></li>
           <li><%= link_to t(".users"), "#" %></li>
           <li><%= link_to t(".help"), help_path %></li>
           <li class="dropdown">

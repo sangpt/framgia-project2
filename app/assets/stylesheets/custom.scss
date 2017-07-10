@@ -146,4 +146,241 @@ textarea {
   border-color: $alert-border-color;
   color: $alert-color;
   text-align: left;
- }
+}
+
+.search-form {
+  @include box-sizing;
+  @include width(440px, !important);
+  height: 30px;
+  margin-bottom: 0;
+}
+
+
+// posts
+
+.posts {
+  list-style: none;
+  padding: 0;
+
+  .post {
+    background-color: $white;
+    border: 1px solid $post-border-color;
+    border-radius: 7px;
+    margin-bottom: 15px;
+    padding: 10px;
+    position: relative;
+  }
+
+  .user {
+    font-size: 1.1em;
+    margin-top: 5em;
+    padding-top: 0;
+  }
+
+  .title {
+    display: block;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-left: 60px;
+
+    a {
+      color: $black;
+    }
+  }
+
+  .content {
+    display: block;
+    margin-left: 60px;
+    padding-right: 20px;
+    word-wrap: break-word;
+
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+
+  .timestamp {
+    color: $timestamp-color;
+    display: block;
+    margin: 0 0 5px 60px;
+  }
+
+  .gravatar {
+    float: left;
+    margin: 5px 10px 0 0;
+  }
+
+  .delete {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+
+  .comment {
+    border-top: 1px solid $gray-lighter;
+    display: block;
+    margin-left: 30px;
+    padding: 5px 0;
+    position: relative;
+
+    .user {
+      margin-left: 10px;
+      padding-top: 0;
+    }
+
+    .content {
+      display: block;
+      margin-left: 60px;
+      padding-right: 25px;
+    }
+
+    .timestamp {
+      color: $timestamp-color;
+      display: block;
+      margin-left: 60px;
+    }
+
+    .delete {
+      position: absolute;
+      right: 2px;
+      top: 2px;
+    }
+  }
+
+  .txt-comment {
+    border: 1px solid $comment-border-color;
+    margin-left: 60px;
+    margin-top: 10px;
+    padding: 6px 12px;
+    width: 89%;
+    word-wrap: break-word;
+  }
+
+  .frm-comment {
+    display: block;
+
+    img {
+      border: 1px solid $comment-border-color;
+      margin: 15px 0 -27px 17px;
+      position: relative;
+
+    }
+
+    input {
+      margin-top: -100px;
+      padding-top: -20px;
+    }
+  }
+}
+
+textarea {
+  height: 100px;
+  margin-bottom: 5px;
+}
+
+span {
+  .picture {
+    margin-top: 10px;
+  }
+
+  input {
+    border: 0;
+  }
+}
+
+.btn-dropdown {
+  background-color: transparent;
+}
+
+// sidebar
+
+aside {
+  section {
+    padding: 10px 0;
+
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+
+    .user-info {
+      display: block;
+      margin-top: 20px;
+    }
+
+    span {
+      display: block;
+      line-height: 1;
+      margin-bottom: 3px;
+    }
+
+    h1 {
+      font-size: 1.4em;
+      letter-spacing: -1px;
+      margin: 10px 0 3px;
+      text-align: left;
+    }
+  }
+}
+
+.txt-post {
+  margin-top: 10px;
+  padding: 6px 12px;
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.gravatar-edit {
+  margin-top: 15px;
+}
+
+.stats {
+  margin-top: 0;
+  overflow: auto;
+  padding: 0;
+
+  a {
+    color: $gray;
+    float: left;
+    padding: 10px;
+    width: 33%;
+
+    &:first-child {
+      border: 0;
+      padding-left: 0;
+    }
+
+    &:hover {
+      color: $blue;
+      text-decoration: none;
+    }
+  }
+
+  strong {
+    display: block;
+  }
+}
+
+.user-avatars {
+  display: inline;
+  margin-top: 10px;
+  overflow: auto;
+  text-align: horizontal;
+
+  .gravatar {
+    margin: 1px;
+  }
+
+  a {
+    padding: 0;
+  }
+}
+
+.users.follow {
+  padding: 0;
+}
