@@ -58,3 +58,10 @@ en:
       title: "Follow"
     user:
       you_sure: "Are you sure?"
+    following:
+      title: "Following"
+    followers:
+      title: "Followers"
+  posts:
+    edit_form:
+      post: "Edit"

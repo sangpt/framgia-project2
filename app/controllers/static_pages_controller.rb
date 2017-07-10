@@ -18,12 +18,13 @@ class StaticPagesController < ApplicationController
   end
 
   def admin
+    time = Time.zone.now.beginning_of_day..Time.zone.now.end_of_day
     @count = {
-      users: User.all.size,
-      posts: Post.all.size,
-      comments: Comment.all.size,
-      likes: Like.all.size,
-      tags: Tag.all.size
+      users: User.where(created_at: time).size,
+      posts: Post.where(created_at: time).size,
+      comments: Comment.where(created_at: time).size,
+      likes: Like.where(created_at: time).size,
+      tags: Tag.where(created_at: time).size
     }
   end
 
@@ -48,7 +49,15 @@ class StaticPagesController < ApplicationController
       likes: Like.where(created_at: time).size,
       tags: Tag.where(created_at: time).size
     }
-    admin if time == "all_the_time"
+    if choice == "all_the_time"
+      @count = {
+        users: User.all.size,
+        posts: Post.all.size,
+        comments: Comment.all.size,
+        likes: Like.all.size,
+        tags: Tag.all.size
+      }
+    end
     render json: {
       count: @count
     }

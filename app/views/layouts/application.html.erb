@@ -2,11 +2,11 @@
 <html>
   <head>
     <title><%= full_title yield(:title) %></title>
+    <%= favicon_link_tag "icon.ico" %>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag "application", media: "all",
       "data-turbolinks-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/standalone/selectize.js"></script> -->
   </head>
   <body>
     <%= render "layouts/header" %>

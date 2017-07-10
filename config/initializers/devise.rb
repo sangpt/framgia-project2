@@ -12,6 +12,7 @@ Devise.setup do |config|
   config.reset_password_within = 6.hours
   config.sign_out_via = :delete
   config.omniauth :facebook, "476475936032545", "985b99bc7123b3c694de9b5ca1726ec9",
-    scope: 'email, public_profile,user_birthday,user_education_history,user_hometown,user_location,user_work_history'
-  config.omniauth :google_oauth2, "586423883509-n380eblgdm39sqojmh66guo7ev4k6q0o.apps.googleusercontent.com", "Tb7_wILYkuwLVdpdyxhv1rHL", { }
+    scope: 'email, public_profile, user_birthday'
+  config.omniauth :google_oauth2, "586423883509-2fjk4me1gi4q2et7dhrpomef0hj8jjsn.apps.googleusercontent.com",
+    "ekQki3zc7ApVBFXPmnaoir9S", { }
 end

@@ -1,9 +1,6 @@
-
-<!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
 
-      <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -18,11 +15,11 @@
             <%= form_for @post, data: {id: @post.id} do |f| %>
               <%= render "shared/error_messages", object: f.object %>
 
-              <div class="field">
-                <%= f.text_field :title, placeholder: t(".placeholder_title"), class: "txt-post" %>
+              <div class="form-group">
+                <%= f.text_field :title, placeholder: t(".placeholder_title"), class: "txt-post form-control" %>
               </div>
-              <div class="field">
-                <%= f.text_area :content, placeholder: t(".placeholder_content"), class: "txt-post" %>
+              <div class="form-group">
+                <%= f.text_area :content, placeholder: t(".placeholder_content"), class: "txt-post form-control" %>
               </div>
               <%= f.submit t(".post"), class: "btn btn-primary", id: "update-post" %>
             <% end %>

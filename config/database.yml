@@ -1,9 +1,12 @@
 default: &default
-  adapter: postgresql
-  database: project2_production
-  username: project2
-  password: <%= ENV['RAILS-TUTORIAL_DATABASE_PASSWORD'] %>
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: localhost
+  database: project2_development
+  username: root
+  password: root
+  socket: /var/run/mysqld/mysqld.sock
 
 development:
   adapter: mysql2

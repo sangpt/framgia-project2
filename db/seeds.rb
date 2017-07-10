@@ -12,7 +12,7 @@ end
 users = User.order(:created_at).take 6
 20.times do
   title = Faker::Company.name
-  content = Faker::Lorem.sentence 5
+  content = Faker::Lorem.paragraphs.join
   users.each{|user| user.posts.create! title: title, content: content}
 end
 
