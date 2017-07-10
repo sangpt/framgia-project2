@@ -13,7 +13,4 @@
     class: "txt-post form-control", required: true %>
   </div>
   <%= f.submit t(".post"), class: "btn btn-primary", id: "create-post" %>
-  <span class="picture">
-    <%= f.file_field :picture, accept: Settings.picture.file_type %>
-  </span>
 <% end %>

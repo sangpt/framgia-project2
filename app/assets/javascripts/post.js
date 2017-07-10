@@ -37,7 +37,7 @@ $(document).on('turbolinks:load', function(){
         success: function(data){
           $(data.html).prependTo($('#posts'));
           $('#new_post').trigger("reset");
-          $('.items').children('div').hide();
+          $('.items').children('div').fadeOut();
           $('.items').children('input').attr('placeholder', data.placeholder);
         }
       });
@@ -84,7 +84,7 @@ $(document).on('turbolinks:load', function(){
         url: '/posts/'+ post_id,
         data: {id: post_id},
         success: function(data){
-          $('#post-' + post_id).hide();
+          $('#post-' + post_id).fadeOut();
         }
       });
     });

@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
   before_action :load_post, only: [:edit, :update, :destroy]
+  before_action :verify_admin!, only: :destroy
 
   def create
     @post = current_user.posts.build post_params
@@ -69,5 +70,9 @@ class PostsController < ApplicationController
   def load_post
     @post = Post.find_by id: params[:id]
     redirect_to root_url if @post.nil?
+  end
+
+  def verify_admin!
+    redirect_to root_url unless current_user.is_admin?
   end
 end

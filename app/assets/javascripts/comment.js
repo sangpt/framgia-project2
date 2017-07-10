@@ -56,7 +56,7 @@ $(document).on('turbolinks:load', function(){
         url: '/comments/'+ comment_id,
         data: {id: comment_id},
         success: function(data){
-          $('#comment-' + comment_id).hide();
+          $('#comment-' + comment_id).fadeOut();
           $('#comment-number-' + post_id).text(data.comment_number);
         }
       });

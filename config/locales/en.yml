@@ -1,5 +1,5 @@
 en:
-  app_name: "Project 2"
+  app_name: "fakebook"
   static_pages:
     home:
       title: "Home"
@@ -9,7 +9,7 @@ en:
       title: "Contact"
     about:
       title: "About"
-  layout:
+  layouts:
     header:
       users: "Users"
       help: "Help"
@@ -51,3 +51,10 @@ en:
       posts: "Posts"
       following: "Following"
       followers: "Followers"
+  users:
+    unfollow:
+      title: "Unfollow"
+    follow:
+      title: "Follow"
+    user:
+      you_sure: "Are you sure?"

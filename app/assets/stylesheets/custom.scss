@@ -379,9 +379,11 @@ aside {
       text-decoration: none;
     }
   }
-  strong {
-    display: block;
-  }
+}
+
+.stats-user {
+  @extend .stats;
+  margin-top: 25px;
 }
 
 .user-avatars {
