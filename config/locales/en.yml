@@ -47,3 +47,7 @@ en:
       placeholder_title: "Type title here..."
       placeholder_content: "Type content here..."
       post: "Post"
+    stats:
+      posts: "Posts"
+      following: "Following"
+      followers: "Followers"

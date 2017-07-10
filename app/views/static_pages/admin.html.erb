@@ -1,0 +1,33 @@
+<div class="row">
+  <h1>Admin statistics</h1>
+  <div class="col-md-4">
+    <div class="form-group">
+      <select class="form-control" id="time_choice">
+        <option value="all_the_time">All the time</option>
+        <option value="today">Today</option>
+        <option value="this_week">This week</option>
+        <option value="this_month">This month</option>
+        <option value="this_year">This year</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <ul class="list-group">
+      <li class="list-group-item">Total users <span class="badge" id="total_users">
+        <%= @count[:users] %>
+      </span></li>
+      <li class="list-group-item">Total posts <span class="badge" id="total_posts">
+        <%= @count[:posts] %>
+      </span></li>
+      <li class="list-group-item">Total comments <span class="badge" id="total_comments">
+        <%= @count[:comments] %>
+      </span></li>
+      <li class="list-group-item">Total likes <span class="badge" id="total_likes">
+        <%= @count[:likes] %>
+      </span></li>
+      <li class="list-group-item">Total tags <span class="badge" id="total_tags">
+        <%= @count[:tags] %>
+      </span></li>
+    </ul>
+  </div>
+</div>

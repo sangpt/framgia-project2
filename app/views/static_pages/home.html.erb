@@ -1,41 +1,41 @@
 <% if user_signed_in? %>
 
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <%= render "shared/user_info" %>
-    </section>
-    <section class="stats">
-      <%= render "shared/stats" %>
-    </section>
-    <section class="post-form">
-      <div class="posts">
-        <%= render "shared/post_form" %>
-      </div>
-    </section>
-  </aside>
-  <div class="col-md-8">
-    <h2><%= t ".post_feed" %></h2>
-    <%= render "shared/feed" %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render "shared/user_info" %>
+      </section>
+      <section class="stats">
+        <%= render "shared/stats" %>
+      </section>
+      <section class="post-form">
+        <div class="posts">
+          <%= render "shared/post_form" %>
+        </div>
+      </section>
+    </aside>
+    <div class="col-md-8">
+      <h2><%= t ".post_feed" %></h2>
+      <%= render "shared/feed" %>
+    </div>
   </div>
-</div>
 
 <% else %>
 
-<div class="row">
-  <div class="col-md-6">
-    <div class="intro">
-      Fakebook helps you connect and share with the people in your life.
+  <div class="row">
+    <div class="col-md-6">
+      <div class="intro">
+        Fakebook helps you connect and share with the people in your life.
+      </div>
+      <%= image_tag "social.png", alt: "social network", class: "img-responsive" %>
     </div>
-    <%= image_tag "social.png", alt: "social network", class: "img-responsive" %>
+    <div class="col-md-6 center">
+      <h1>Create an account</h1>
+      <h3 class="center">
+        It's free and always will be.
+      </h3>
+      <%= render template: "devise/registrations/new" %>
+    </div>
   </div>
-  <div class="col-md-6 center">
-    <h1>Create an account</h1>
-    <h3 class="center">
-      It's free and always will be.
-    </h3>
-    <%= render template: "devise/registrations/new" %>
-  </div>
-</div>
 
 <% end %>

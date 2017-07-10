@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get "/about", to: "static_pages#about"
   get "/contact", to: "static_pages#contact"
   get "/search", to: "static_pages#search"
+  get "/admin", to: "static_pages#admin"
+  get "/load_statistics", to: "static_pages#load_statistics"
   devise_for :users
   devise_scope :user do
     get "/sign_in", to: "devise/sessions#new"

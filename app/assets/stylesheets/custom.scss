@@ -339,7 +339,6 @@ aside {
     h1 {
       font-size: 1.4em;
       letter-spacing: -1px;
-      margin: 10px 0 3px;
       text-align: left;
     }
   }
@@ -366,6 +365,7 @@ aside {
   padding: 0;
   a {
     color: gray;
+    border-left: 1px solid $gray-lighter;
     float: left;
     padding: 10px 10px;
     width: 33%;
