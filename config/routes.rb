@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "/search", to: "static_pages#search"
   get "/admin", to: "static_pages#admin"
   get "/load_statistics", to: "static_pages#load_statistics"
-  devise_for :users
+  devise_for :users, controllers: {omniauth_callbacks: "devise/omniauth_callbacks"}
   devise_scope :user do
     get "/sign_in", to: "devise/sessions#new"
     delete "/sign_out", to: "devise/sessions#destroy"

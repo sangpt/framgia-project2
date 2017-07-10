@@ -19,4 +19,10 @@
   </span>
   <% end %>
   <span class="show-comment">Comment</span>
+  <span class="dropdown">
+    <span class="dropdown-toggle" data-toggle="dropdown">Share</span>
+    <ul class="dropdown-menu">
+      <%= social_share_button_tag(post.title, url: post_url(post)) %>
+    </ul>
+  </span>
 </div>

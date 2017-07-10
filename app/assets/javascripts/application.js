@@ -16,3 +16,8 @@
 //= require turbolinks
 //= require_tree .
 //= require selectize
+//= require social-share-button
+
+setTimeout(function() {
+  $('.alert').slideUp();
+}, 2000);

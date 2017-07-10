@@ -1,11 +1,16 @@
 <div class="row">
-  <%- resource_class.omniauth_providers.each do |provider| %>
   <div class="col-md-6">
-    <%= link_to omniauth_authorize_path(resource_name, provider),
-      class: "btn btn-block btn-social btn-#{provider.to_s}" do %>
-      <%= t ".sign_in_with" %> <%= OmniAuth::Utils.camelize provider %>
-      <i class="fa fa-<%= provider.to_s %>"></i>
+    <%= link_to omniauth_authorize_path(resource_name, :facebook),
+      class: "btn btn-block btn-social btn-facebook" do %>
+      <%= t ".sign_in_with" %> Facebook
+      <i class="fa fa-facebooj"></i>
     <% end %>
   </div>
-  <% end %>
+  <div class="col-md-6">
+    <%= link_to omniauth_authorize_path(resource_name, :google_oauth2),
+      class: "btn btn-block btn-social btn-google" do %>
+      <%= t ".sign_in_with" %> Google
+      <i class="fa fa-google"></i>
+    <% end %>
+  </div>
 </div>
